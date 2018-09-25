@@ -1,0 +1,8 @@
+<div *ngFor="let year of getArray(listCount); let i = index" class="div-year row" (click)="toggleDetailView(i);">
+  <div id="raceYear{{i}}"><span>{{2005+i}}</span></div>
+  <img *ngIf="showDetail[i]" src="{{collapseImgSrc}}">
+  <img *ngIf="!showDetail[i]" src="{{expandImgSrc}}">
+  <div id="raceSeasons{{i}}" class="container" *ngIf="showDetail[i]">
+    <app-detail-view [seasonsList]="seasonsList[i]" [worldChampionDetail]="worldChampionDetail[i]"></app-detail-view>
+  </div>
+</div>

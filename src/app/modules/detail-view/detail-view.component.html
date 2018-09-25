@@ -1,0 +1,10 @@
+  <div class="row table-header">
+    <div class="col-xs-3 col-md-2 ">Round</div>
+    <div class="col-xs-4 col-md-4 ">Race Name</div>
+    <div class="col-xs-4 col-md-2 ">Winner</div>
+  </div>
+  <div class="row table-round" *ngFor="let race of seasonsList;" [ngClass]="getHighlightClass(race)">
+    <div class="col-md-2 col-xs-3">{{race.round}}</div>
+    <div class="col-md-4 col-xs-4">{{race.raceName}}</div>
+    <div class="col-md-2 col-xs-4">{{getWinnerFullName(race)}}</div>
+  </div>
